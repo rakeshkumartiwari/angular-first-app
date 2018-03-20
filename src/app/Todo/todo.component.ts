@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class TodoComponent {
 
+    list = [];
+    showMsg(title: HTMLInputElement) {
+        if (title.value !== '') {
+            this.list.push(title.value);
+            title.value = null;
+
+        } else {
+            return;
+        }
+
+    }
 }

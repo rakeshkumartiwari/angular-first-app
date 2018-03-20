@@ -1,1 +1,14 @@
-<h1>Todo is coming soon... ok..</h1> 
+<h1>Todo is coming soon... ok..</h1>
+
+<div>
+    <input type='text' #titleInput id='txt' />
+    <button (click)='showMsg(titleInput)'>Click here</button>
+
+
+    <h4>List of Item</h4>
+    <ul>
+        <li *ngFor='let l of list'>
+            {{l}}
+        </li>
+    </ul>
+</div>

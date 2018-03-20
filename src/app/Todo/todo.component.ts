@@ -6,14 +6,15 @@ import { Component } from '@angular/core';
 
 })
 export class TodoComponent {
-
+    msg: string;
     list = [];
     showMsg(title: HTMLInputElement) {
         if (title.value !== '') {
             this.list.push(title.value);
             title.value = null;
-
+            this.msg = ' ';
         } else {
+            this.msg = 'Please enter some value.';
             return;
         }
 

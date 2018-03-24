@@ -1,14 +1,25 @@
-<h1>Todo is coming soon... ok..</h1>
+<div class="container">
+    <div class="row">
+        <div class="form-group col-lg-12">
+            <div class="col-lg-6">
+                <input type='text' #titleInput id='txt' class="form-control" placeholder="Please enter some Item" />
+                <p style="color:red">{{msg}}</p>
+            </div>
+            <div class="col-lg-6">
+                <button class="btn btn-primary" (click)='showMsg(titleInput)'>Click here</button>
+            </div>
 
-<div>
-    <input type='text' #titleInput id='txt' /><p style="color:red">{{msg}}</p>
-    <button (click)='showMsg(titleInput)'>Click here</button>
+            <div class="col-lg-12">
+                <h4>
+                    <u>List of Item</u>
+                </h4>
+                <ul>
+                    <li *ngFor='let l of list'>
+                        {{l}}
+                    </li>
+                </ul>
+            </div>
 
 
-    <h4>List of Item</h4>
-    <ul>
-        <li *ngFor='let l of list'>
-            {{l}}
-        </li>
-    </ul>
-</div>
+        </div>
+    </div>

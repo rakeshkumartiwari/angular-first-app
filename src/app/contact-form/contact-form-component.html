@@ -1,48 +1,35 @@
-<!doctype html>
-<html>
-
-<head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <script src=" https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
-</head>
-
-<body>
-    <div class="container">
-        <form>
-            <div class="row">
-                <div class="form-group" class="col-lg-12">
-                    <div class="co-sm-4">
-                        <label for='firstName'>First Name</label>
-                    </div>
-                    <div class="col-sm-4">
-                        <input required minlength="3" ngModel name="firstName" #firstName="ngModel" (change)="log(firstName)" type="text" class="form-control"
-                            id='firstName'>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">
-                            <div *ngIf="firstName.errors.required">First name is required.</div>
-                            <div *ngIf="firstName.errors.minlength">First name should be {{firstName.errors.minlength.requiredLength}} charactors.</div>
-                        </div>
+<div class="container">
+    <form>
+        <div class="row">
+            <div class="form-group" class="col-lg-12">
+                <div class="co-sm-4">
+                    <label for='firstName'>First Name</label>
+                </div>
+                <div class="col-sm-4">
+                    <input required minlength="3" ngModel name="firstName" #firstName="ngModel" (change)="log(firstName)" type="text" class="form-control"
+                        id='firstName'>
+                </div>
+                <div class="col-sm-4">
+                    <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">
+                        <div *ngIf="firstName.errors.required">First name is required.</div>
+                        <div *ngIf="firstName.errors.minlength">First name should be {{firstName.errors.minlength.requiredLength}} charactors.</div>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="form-group" class="col-lg-12">
-                    <div class="co-sm-6">
-                        <label for="comment">Comment</label>
-                    </div>
-                    <div class="col-sm-6">
-                        <textarea id="comment" cols="20" rows="10" class="form-control"></textarea>
-                    </div>
+        </div>
+        <div class="row">
+            <div class="form-group" class="col-lg-12">
+                <div class="co-sm-6">
+                    <label for="comment">Comment</label>
+                </div>
+                <div class="col-sm-6">
+                    <textarea id="comment" cols="20" rows="10" class="form-control"></textarea>
                 </div>
             </div>
-            <div class="col-sm-12">
-                <button class="btn btn-primary">Submit</button>
-            </div>
+        </div>
+        <div class="col-sm-12">
+            <button class="btn btn-primary">Submit</button>
+        </div>
 
-        </form>
-    </div>
-</body>
-
-</html>
+    </form>
+</div>

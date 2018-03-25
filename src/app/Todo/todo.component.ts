@@ -6,17 +6,23 @@ import { Component } from '@angular/core';
 
 })
 export class TodoComponent {
-    msg: string;
-    list = [];
-    showMsg(title: HTMLInputElement) {
-        if (title.value !== '') {
-            this.list.push(title.value);
-            title.value = null;
-            this.msg = ' ';
-        } else {
-            this.msg = 'Please enter some value.';
-            return;
-        }
 
+    msg: string;
+    itemList = [];
+    addItem(item) {
+        // if (item.value !== '') {
+        this.itemList.push(item.value);
+        // this.msg = ' ';
+        // } else {
+        // this.msg = 'Please enter some value.';
+        // return;
+        // }
+
+    }
+
+    removeItem(item) {
+        // tslint:disable-next-line:prefer-const
+        let index = this.itemList.indexOf(item.value);
+        this.itemList.splice(index - 1, 1);
     }
 }

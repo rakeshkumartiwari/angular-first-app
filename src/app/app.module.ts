@@ -7,11 +7,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { TodoComponent } from './Todo/todo.component';
 import { ContactFormComponent } from './contact-form/contact-form-component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormComponent } from './reactive-form/reactive-form-component';
 @NgModule({
   declarations: [
     AppComponent,
     TodoComponent,
-    ContactFormComponent
+    ContactFormComponent,
+    ReactiveFormComponent
   ],
   imports: [
     BrowserModule,
@@ -26,6 +28,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
         {
           path: 'contactForm',
           component: ContactFormComponent
+        },
+        {
+          path: 'reactiveForm',
+          component: ReactiveFormComponent
         }
       ]
     )

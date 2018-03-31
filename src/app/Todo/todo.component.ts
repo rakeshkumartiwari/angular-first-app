@@ -11,15 +11,8 @@ export class TodoComponent {
     msg: string;
     itemList = [];
     addItem(item) {
-        // if (item.value !== '') {
         this.itemList.push(item);
         this.inputItem = '';
-        // this.msg = ' ';
-        // } else {
-        // this.msg = 'Please enter some value.';
-        // return;
-        // }
-
     }
 
     removeItem(item) {

@@ -10,7 +10,7 @@ export class TodoComponent {
     msg = 'This is require field.';
     itemList: any = [];
     addItem(inputItem) {
-        if (inputItem.status !== 'INVALID') {
+        if (inputItem.value !== '') {
             const todo = new Todo();
             todo.id = this.getId();
             todo.name = inputItem.value;

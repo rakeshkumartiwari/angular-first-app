@@ -7,16 +7,16 @@ import { Component } from '@angular/core';
 
 })
 export class TodoComponent {
-    inputItem: string;
-    msg: string;
+    msg = 'This is require field.';
     itemList: any = [];
-    addItem() {
-        const todo = new Todo();
-        todo.id = this.getId();
-        todo.name = this.inputItem;
-        this.itemList.push(todo);
-        this.inputItem = '';
-       // console.log(this.itemList);
+    addItem(inputItem) {
+        if (inputItem.status !== 'INVALID') {
+            const todo = new Todo();
+            todo.id = this.getId();
+            todo.name = inputItem.value;
+            this.itemList.push(todo);
+        }
+        console.log(inputItem);
     }
 
     removeItem(item) {

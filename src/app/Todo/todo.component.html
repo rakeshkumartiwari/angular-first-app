@@ -1,15 +1,15 @@
 <div class="container">
-    <h5 class="alert alert-danger">Todo</h5>
+    <h5 class="alert alert-success">Todo</h5>
 </div>
 <div class="container">
     <div class="row">
         <div class="form-group col-lg-12">
             <div class="col-lg-6">
-                <input type='text' [(ngModel)]="inputItem" class="form-control" placeholder="Please enter Item" />
-                <p style="color:red">{{msg}}</p>
+                <input required type='text' ngModel  #inputItem="ngModel"  class="form-control" placeholder="Please enter Item"/>
+               <div class="alert alert-danger" *ngIf="!inputItem.valid && inputItem.touched">{{msg}}</div>
             </div>
             <div class="col-lg-6">
-                <button class="btn btn-primary" (click)='addItem()'>Click here</button>
+                <button class="btn btn-primary" (click)='addItem(inputItem)'>Click here</button>
             </div>
         </div>
         <!-- <div class="col-lg-12">
@@ -38,7 +38,7 @@
         </div>
     </div>
 </div> -->
-<div class="container">
+<div class="container" *ngIf="itemList && itemList.length">
     <table class="table table-hover ">
         <thead>
             <tr>

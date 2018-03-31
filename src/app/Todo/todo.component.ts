@@ -11,20 +11,23 @@ export class TodoComponent {
     msg: string;
     itemList: any = [];
     addItem() {
-        this.itemList.push(
-            {
-                'name': this.inputItem,
-                'id': this.getId()
-            });
+        const todo = new Todo();
+        todo.id = this.getId();
+        todo.name = this.inputItem;
+        this.itemList.push(todo);
         this.inputItem = '';
-        console.log(this.itemList);
+       // console.log(this.itemList);
     }
 
     removeItem(item) {
-       this.itemList = this.itemList.filter(i => i.id !== item);
+        this.itemList = this.itemList.filter(i => i.id !== item);
     }
 
     getId() {
         return Math.floor(1000 + Math.random() * 9000);
     }
+}
+export class Todo {
+    id: number;
+    name: string;
 }

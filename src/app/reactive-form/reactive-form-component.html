@@ -1,3 +1,50 @@
 <div class="container">
-<h5 class="alert alert-danger">Reactive Form</h5>
+    <h5>Reactive Form</h5>
 </div>
+
+<div *ngIf=!name; else forminfo>
+    <form [formGroup]="rForm" (ngSubmit)="addPost(rForm.value)">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <label>Name</label>
+                    <input type="text" formControlName="name" class="form-control">
+                    <div class="alert" *ngIf="!rForm.controls['name'].valid && rForm.controls['name'].touched">
+                        {{titleAlert}}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <label>Description</label>
+                    <textarea formControlName="description" class="form-control"></textarea>
+                    <div class="alert" *ngIf="!rForm.controls['description'].valid && rForm.controls['description'].touched">
+                        You must specify a description that's between 30 and 500 characters.
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <label for="validate">Minimum of 3 characters</label>
+                    <br>
+                    <input type="checkbox" name="validate" value="1" formControlName="validate">On
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <input type="submit" class="btn btn-primary" value="Submit Form" [disabled]="!rForm.valid">
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<ng-template #forminfo>
+    <div class="form-container">
+        <div class="row columns">
+            <h1> {{name}}</h1>
+            <p>{{description}}</p>
+        </div>
+    </div>
+</ng-template>

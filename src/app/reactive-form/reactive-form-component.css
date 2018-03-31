@@ -1,0 +1,24 @@
+
+
+.alert{
+    background-color: #f2edda;
+    padding: 7px;
+   
+    margin-top: 5px;
+    display: inline-block;
+    animation: 2s alertAnim forwards
+}
+
+
+
+
+@keyframes alertAnim {
+    from{
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

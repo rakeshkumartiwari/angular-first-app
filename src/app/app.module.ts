@@ -8,12 +8,13 @@ import { TodoComponent } from './Todo/todo.component';
 import { ContactFormComponent } from './contact-form/contact-form-component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ReactiveFormComponent } from './reactive-form/reactive-form-component';
+
 @NgModule({
   declarations: [
     AppComponent,
     TodoComponent,
     ContactFormComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
   ],
   imports: [
     BrowserModule,

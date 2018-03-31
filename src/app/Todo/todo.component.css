@@ -1,0 +1,16 @@
+
+
+
+body{
+    font-size: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+.jumbotron{
+width: 550px;
+margin-left: 120px;
+}
+
+table{
+    width: 550px;
+}

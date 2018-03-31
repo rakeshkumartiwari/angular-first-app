@@ -24,7 +24,7 @@ export class TodoComponent {
 
     removeItem(item) {
         // tslint:disable-next-line:prefer-const
-        let index = this.itemList.indexOf(item.value);
+        let index = this.itemList.indexOf(item);
         this.itemList.splice(index, 1);
     }
 }
